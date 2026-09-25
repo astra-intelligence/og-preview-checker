@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OG Preview Checker API — Check GitHub Social Preview Status</title>
+<meta name="description" content="API documentation for the OG Preview Checker. Check any GitHub repo's social preview status programmatically.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(135deg,#161b22,#0d1117);padding:3rem 0 2rem;text-align:center;border-bottom:1px solid #30363d}
+header h1{font-size:2.2rem;font-weight:700;background:linear-gradient(90deg,#58a6ff,#3fb950);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem}
+header p{color:#8b949e;font-size:1.1rem}
+main{padding:2rem 0}
+section{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+h2{color:#58a6ff;margin-bottom:1rem;font-size:1.4rem}
+h3{color:#c9d1d9;margin:1rem 0 0.5rem;font-size:1.1rem}
+code{background:#0d1117;padding:2px 6px;border-radius:4px;font-size:0.9em;color:#f0883e}
+pre{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1rem;overflow-x:auto;font-size:0.85rem;margin:0.5rem 0}
+pre code{background:none;padding:0;color:#c9d1d9}
+.method{display:inline-block;padding:2px 8px;border-radius:4px;font-weight:700;font-size:0.8rem}
+.method.get{background:#1a3a1a;color:#3fb950}
+.method.post{background:#1a2a3a;color:#58a6ff}
+.endpoint{margin:1rem 0;padding:0.75rem;border-left:3px solid #30363d}
+.endpoint:hover{border-left-color:#58a6ff}
+.response-field{margin:0.25rem 0;font-size:0.9rem}
+.response-field .field{color:#58a6ff}
+.response-field .type{color:#8b949e;font-size:0.8rem}
+.badge-pro{display:inline-block;padding:2px 8px;border-radius:999px;font-size:0.75rem;font-weight:600;background:#1a1a3a;color:#58a6ff;border:1px solid #58a6ff;margin-left:0.5rem}
+ul,ol{padding-left:1.5rem;color:#8b949e}
+li{margin:0.25rem 0}
+a{color:#58a6ff}
+.pricing{display:flex;gap:1rem;margin:1rem 0;flex-wrap:wrap}
+.pricing-card{flex:1;min-width:250px;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1.5rem;text-align:center}
+.pricing-card h3{color:#c9d1d9}
+.pricing-card .price{font-size:2.5rem;font-weight:700;margin:0.5rem 0}
+.pricing-card .price.free{color:#3fb950}
+.pricing-card .price.pro{color:#58a6ff}
+.pricing-card ul{list-style:none;padding:0;text-align:left;margin-top:0.75rem}
+.pricing-card ul li{padding:4px 0;font-size:0.9rem}
+.pricing-card a{display:inline-block;margin-top:0.75rem;padding:10px 24px;color:#fff;text-decoration:none;border-radius:6px;font-weight:600}
+footer{text-align:center;padding:2rem;color:#484f58;border-top:1px solid #30363d;margin-top:2rem}
+@media(max-width:600px){header h1{font-size:1.6rem}.pricing{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>OG Preview Checker API</h1>
+<p>Check any GitHub repo's social preview status programmatically</p>
+<p style="margin-top:1rem"><a href="/" style="color:#8b949e">← Back to Tool</a></p>
+</div>
+</header>
+<main class="container">
+
+<section id="overview">
+<h2>Overview</h2>
+<p>The OG Preview Checker API lets you programmatically check whether GitHub repositories have custom Open Graph images, and generate preview images on demand.</p>
+<p>Base URL: <code>http://167.233.135.161:8081</code></p>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="pricing">
+<div class="pricing-card">
+<h3>Free</h3>
+<div class="price free">$0</div>
+<p style="color:#8b949e;font-size:0.85rem">For individuals</p>
+<ul>
+<li>✓ Check any repo by URL</li>
+<li>✓ Generate free OG images</li>
+<li>✓ Web UI access</li>
+<li>✗ Batch API</li>
+<li>✗ License key</li>
+</ul>
+<a href="/" style="background:#238636">Try Free →</a>
+</div>
+<div class="pricing-card" style="border-color:#58a6ff">
+<h3>Pro</h3>
+<div class="price pro">$3+</div>
+<p style="color:#8b949e;font-size:0.85rem">Pay what you want</p>
+<ul>
+<li>✓ Everything in Free</li>
+<li>✓ Batch API (up to 10 repos)</li>
+<li>✓ License key for automation</li>
+<li>✓ Commercial use</li>
+<li>✓ Lifetime access</li>
+</ul>
+<a href="https://grantshatz.gumroad.com/l/og-preview-api-license" style="background:#1f6feb" target="_blank">Get License →</a>
+</div>
+</div>
+</section>
+
+<section id="endpoints">
+<h2>Endpoints</h2>
+
+<div class="endpoint">
+<h3><span class="method get">GET</span> /api/check?url=https://github.com/owner/repo</h3>
+<p style="color:#8b949e;font-size:0.9rem">Check a single repository's social preview status. <strong>Free</strong></p>
+<h4>Response</h4>
+<pre><code>{
+  "success": true,
+  "repo": "owner/repo",
+  "name": "owner/repo",
+  "description": "A GitHub project",
+  "stars": 1234,
+  "has_custom_og_image": false,
+  "og_image_url": "https://...",
+  "default_og": true
+}</code></pre>
+</div>
+
+<div class="endpoint">
+<h3><span class="method post">POST</span> /api/generate</h3>
+<p style="color:#8b949e;font-size:0.9rem">Generate a free OG preview image for any repo. <strong>Free</strong></p>
+<h4>Request Body</h4>
+<pre><code>{
+  "url": "https://github.com/owner/repo"
+}</code></pre>
+<h4>Response</h4>
+<pre><code>{
+  "success": true,
+  "repo": "owner/repo",
+  "image_base64": "data:image/png;base64,..."
+}</code></pre>
+</div>
+
+<div class="endpoint">
+<h3><span class="method post">POST</span> /api/batch</h3>
+<p style="color:#8b949e;font-size:0.9rem">Check multiple repos at once. <strong>Pro (license key required)</strong> <span class="badge-pro">PRO</span></p>
+<h4>Request Body</h4>
+<pre><code>{
+  "license_key": "YOUR_LICENSE_KEY",
+  "repos": ["owner/repo1", "owner/repo2"]
+}</code></pre>
+<h4>Response</h4>
+<pre><code>{
+  "success": true,
+  "results": [
+    {"repo": "owner/repo1", "has_custom_og_image": false, "stars": 100, ...}
+  ]
+}</code></pre>
+</div>
+</section>
+
+<section id="quickstart">
+<h2>Quick Start</h2>
+<h3>Check a repo (curl)</h3>
+<pre><code>curl "http://167.233.135.161:8081/api/check?url=https://github.com/vercel/next.js"</code></pre>
+
+<h3>Generate an OG image (curl)</h3>
+<pre><code>curl -X POST "http://167.233.135.161:8081/api/generate" \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://github.com/vercel/next.js"}'</code></pre>
+
+<h3>Batch check (Python, Pro license required)</h3>
+<pre><code>import requests
+
+resp = requests.post("http://167.233.135.161:8081/api/batch", json={
+    "license_key": "YOUR_LICENSE_KEY",
+    "repos": ["vercel/next.js", "tailwindlabs/tailwindcss"]
+})
+print(resp.json())</code></pre>
+</section>
+
+</main>
+<footer class="container">
+<p>Built by <a href="https://github.com/astra-intelligence" target="_blank">Adventure Agent</a> · 
+<a href="https://grantshatz.gumroad.com/l/og-preview-api-license" target="_blank"><strong>Get Pro License ($3+)</strong></a> · 
+<a href="/" target="_blank">Try the Tool</a></p>
+</footer>
+</body>
+</html>
