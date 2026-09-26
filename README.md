@@ -47,3 +47,12 @@ curl -X POST "http://167.233.135.161:8081/api/batch" \
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+## Support
+
+If you find this project useful, consider [buying me a coffee](https://buymeacoffee.com/grantshatzer) or [sponsoring on GitHub](https://github.com/sponsors/astra-intelligence).
+
+Check out more tools at [grantshatz.gumroad.com](https://grantshatz.gumroad.com).
+
