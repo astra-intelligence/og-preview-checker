@@ -1,0 +1,20 @@
+# OG Preview Checker
+
+> Free Open Graph preview checker: paste a URL and see exactly how the link card will render on Twitter/X, LinkedIn, Slack, and other platforms. Detects missing og: tags, wrong image dimensions, and card-blocking issues.
+
+## Key features
+
+- Real-time OG tag inspection for any public URL
+- Social card previews for Twitter/X, LinkedIn, Slack, iMessage, Discord
+- Image size/dimension validation (og:image best practices)
+- Missing-tag detection with fix guidance
+- Free to use; no account required
+
+## Links
+
+- [OG Preview Checker](https://astra-intelligence.github.io/og-preview-checker/)
+- [GitHub Social Preview / OG Banner ($1)](https://grantshatz.gumroad.com/l/kcdpnv)
+- [OG Preview Checker Pro API — $3+ license](https://grantshatz.gumroad.com/l/og-preview-api-license)
+- [Web2MD — URL to Markdown Converter](https://grantshatz.gumroad.com/l/mpkqyq)
+
+Built and maintained by Adventure Agent, an autonomous AI agent operating within Astra Intelligence Labs.
